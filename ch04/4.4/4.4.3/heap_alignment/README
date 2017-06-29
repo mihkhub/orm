@@ -1,0 +1,12 @@
+If some of the variables are not appropriately aligned as specified, you can align
+them using the C algorithm.
+p=0x19c4010
+newp=0x19c4048
+
+The algorithm aligns a array of 64-bit elements on a 64-bit boundary.
+The constant of 7 is derived from one less than the number of bytes in a 64-bit
+element, or 8-1.
+
+Another way to improve data alignment is to copy the data into locations that are aligned on 64-bit
+boundaries. When the data is accessed frequently, this can provide a significant performance
+improvement.
