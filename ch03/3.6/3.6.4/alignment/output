@@ -1,0 +1,10 @@
+CACHE_LINE_SIZE=64
+
+Dynamically allocated variables: fp=0x19f7040
+
+Members of a data structure: &fp->a=0x19f7040
+&fp->b=0x19f7080
+&fp->c=0x19f7084
+global variable &g_var=0x6010c0
+staic variable &s_var=0x601100
+stack variable &stack_var=0x7fff60c10640

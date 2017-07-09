@@ -6,7 +6,7 @@
 struct foo
 {
 	uint64_t a __attribute__(( aligned(CACHE_LINE_SIZE) ));
-	char b;
+	char b __attribute__(( aligned(CACHE_LINE_SIZE) ));
 	int c;
 public:
 	void * operator new(size_t size)
@@ -20,9 +20,16 @@ public:
 };
 
 int g_var __attribute__(( aligned(CACHE_LINE_SIZE) )) = 0;
+int s_var __attribute__(( aligned(CACHE_LINE_SIZE) )) = 0;
+
+//int fun(int __attribute__ ((aligned(CACHE_LINE_SIZE) )) a)
+//{
+//	return printf("Parameters passed on the stack &a=%p\n", &a);
+//}
 
 int main(int argc ,  char **argv)
 {
+	int stack_var __attribute__ (( aligned(CACHE_LINE_SIZE) ))  = 0;
 	printf("CACHE_LINE_SIZE=%u\n",CACHE_LINE_SIZE);
 	/* dynamically allocated variables.  */
 	foo *fp = new foo;	
@@ -32,8 +39,9 @@ int main(int argc ,  char **argv)
 	printf("&fp->c=%p\n", &fp->c);
 	delete fp;
 	
-
-	
+	printf("global variable &g_var=%p\n", &g_var);
+	printf("staic variable &s_var=%p\n", &s_var);
+	printf("stack variable &stack_var=%p\n", &stack_var);
 	
 	
 	return 0;
