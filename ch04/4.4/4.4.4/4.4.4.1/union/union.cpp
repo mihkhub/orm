@@ -19,5 +19,8 @@ class my_m128
 int main(int argc, char **argv)
 {
 	my_m128 m;	
+	printf("data in a class &m=%p\n", &m);
+	foo f;
+	printf("union &f=%p\n",&f);
 	return 0;
 }
