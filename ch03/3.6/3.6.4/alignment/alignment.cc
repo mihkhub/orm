@@ -43,6 +43,14 @@ int main(int argc ,  char **argv)
 	printf("staic variable &s_var=%p\n", &s_var);
 	printf("stack variable &stack_var=%p\n", &stack_var);
 	
+	short int __attribute__ (( aligned(4)  )) var16bit = 0;
+	printf("Align 16-bit data to be contained within an aligned 4-byte word. &var16bit=%p\n", &var16bit);
+
+	int __attribute__ (( aligned(4)  )) var32bit[7];
+	printf("Align 32-bit data so that its base address is a multiple of four. &var32bit=%p\n", &var32bit);
+
+	double __attribute__ (( aligned(16)  )) var128bit[7];
+	printf("Align 128-bit data so that its base address is a multiple of sixteen. &var128bit=%p\n", &var128bit);
 	
 	return 0;
 }

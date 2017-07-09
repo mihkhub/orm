@@ -1,10 +1,13 @@
 CACHE_LINE_SIZE=64
 
-Dynamically allocated variables: fp=0x19f7040
+Dynamically allocated variables: fp=0x24e7040
 
-Members of a data structure: &fp->a=0x19f7040
-&fp->b=0x19f7080
-&fp->c=0x19f7084
+Members of a data structure: &fp->a=0x24e7040
+&fp->b=0x24e7080
+&fp->c=0x24e7084
 global variable &g_var=0x6010c0
 staic variable &s_var=0x601100
-stack variable &stack_var=0x7fff60c10640
+stack variable &stack_var=0x7fff3f5e5c80
+Align 16-bit data to be contained within an aligned 4-byte word. &var16bit=0x7fff3f5e5c7c
+Align 32-bit data so that its base address is a multiple of four. &var32bit=0x7fff3f5e5c60
+Align 128-bit data so that its base address is a multiple of sixteen. &var128bit=0x7fff3f5e5c20
